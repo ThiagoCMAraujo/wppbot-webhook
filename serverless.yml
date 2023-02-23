@@ -1,0 +1,29 @@
+service: customer-webhook
+frameworkVersion: '3'
+
+provider:
+  name: aws
+  runtime: nodejs14.x
+
+functions:
+  getMessage:
+    handler: functions/getMessage.handle
+    events:
+      - httpApi:
+          path: /receiveMessage
+          method: post
+  getMessages:
+    handler: functions/getMessages.handle
+    events:
+      - httpApi:
+          path: /getMessages
+          method: get
+    layers:
+      - { Ref: CustomerWebhookLambdaLayer }
+
+layers:
+  CustomerWebhook:
+    path: layer
+    compatibleRuntimes: 
+      - nodejs14.x
+#  
