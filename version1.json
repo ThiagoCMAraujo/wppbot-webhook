@@ -1,0 +1,36 @@
+{
+		"messaging_product": "whatsapp",
+   	"to": "5562985904210",
+    "type": "interactive",
+		"interactive": {
+			"type": "button",
+			"header": {
+				"type": "text",
+				"text": "Teasy-bot"
+			},
+			"body": {
+				"text": "Please select an option"
+			},
+			"footer": {
+				"text": "thanks!"
+			},
+			"action": {
+				"buttons": [
+					{
+						"type": "reply",
+						"reply": {
+							"id": "unique-postback-id1",
+							"title": "Option 1"
+						}
+					},
+					{
+						"type": "reply",
+						"reply": {
+							"id": "unique-postback-id2",
+							"title": "Option 2"
+						}
+					}
+				]
+			}
+		}
+}
